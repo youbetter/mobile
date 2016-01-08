@@ -1,2 +1,2 @@
 # mobile
-Record and review your progress from a mobile device
+YouBetter on a mobile device
