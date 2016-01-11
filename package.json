@@ -1,0 +1,23 @@
+{
+  "name": "youbetter-mobile",
+  "version": "0.1.0",
+  "description": "YouBetter for mobile devices",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/youbetter/mobile.git"
+  },
+  "keywords": [
+    "youbetter",
+    "shine",
+    "goals",
+    "training",
+    "mobile",
+    "app"
+  ],
+  "author": "Sean Jacke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/youbetter/mobile/issues"
+  },
+  "homepage": "http://youbetter.today"
+}
