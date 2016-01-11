@@ -21,6 +21,10 @@
   },
   "homepage": "http://youbetter.today",
   "devDependencies": {
+    "html-webpack-plugin": "^1.7.0",
     "webpack": "^1.12.10"
+  },
+  "scripts": {
+    "build": "webpack"
   }
 }
