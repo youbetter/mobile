@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/youbetter/mobile/issues"
   },
-  "homepage": "http://youbetter.today"
+  "homepage": "http://youbetter.today",
+  "devDependencies": {
+    "webpack": "^1.12.10"
+  }
 }
