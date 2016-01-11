@@ -21,7 +21,13 @@
   },
   "homepage": "http://youbetter.today",
   "devDependencies": {
+    "babel-core": "^6.4.0",
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
     "html-webpack-plugin": "^1.7.0",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6",
     "webpack": "^1.12.10"
   },
   "scripts": {
