@@ -33,7 +33,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             minify: { },
-            title: 'YouBetter',
+            title: 'You Better',
             bodyContent: '',
             template: './src/index.html',
             inject: 'body'
