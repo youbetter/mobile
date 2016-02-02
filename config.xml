@@ -24,4 +24,5 @@
         <variable name="APP_ID" value="894927877288176" />
         <variable name="APP_NAME" value="YOU BETTER" />
     </plugin>
+    <engine name="ios" spec="~3.9.2" />
 </widget>
