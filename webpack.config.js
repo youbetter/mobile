@@ -1,8 +1,13 @@
 var webpack = require('webpack');
 var path = require('path');
+var dotenv = require('dotenv');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+dotenv.config({ path: process.env.NODE_ENV === 'production' ? 'prod.env' : 'dev.env' });
 
 module.exports = {
+    devtool: process.env.SOURCE_MAPS ? 'source-map' : false,
     entry: './src/index.jsx',
     exclude: /node_modules/,
     module: {
@@ -22,6 +27,36 @@ module.exports = {
                 query: {
                     presets: [ 'es2015', 'react' ]
                 }
+            },
+            {
+                test: /\.(png|jpg)$/,
+                loader: 'url-loader?limit=8192'
+            },
+            {
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap')
+            },
+            {
+                test: /\.(scss)$/,
+                loader: ExtractTextPlugin.extract('css!sass')
+/*
+                loader: (
+                    process.env.MINIFICATION ?
+                    ExtractTextPlugin.extract(
+                        'style',
+                        'css?modules&importLoaders=2&sourceMap!autoprefixer?browsers=last 2 version!sass?outputStyle=expanded&sourceMap=true&sourceMapContents=true'
+                    ) :
+                    'style!css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]!autoprefixer?browsers=last 2 version!sass?outputStyle=expanded&sourceMap'
+                )
+*/
+            },
+            {
+                test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                loader: 'url-loader?limit=10000&mimetype=application/font-wolf'
+            },
+            {
+                test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                loader: 'file-loader'
             }
         ]
     },
@@ -31,12 +66,17 @@ module.exports = {
         publicPath: ''
     },
     plugins: [
+        new webpack.DefinePlugin({
+            __FACEBOOK_APP_ID__: JSON.stringify(process.env.FACEBOOK_APP_ID),
+            __YOUBETTER_API__: JSON.stringify(process.env.YOUBETTER_API)
+        }),
         new HtmlWebpackPlugin({
             minify: { },
             title: 'You Better',
             bodyContent: '',
             template: './src/index.html',
             inject: 'body'
-        })
+        }),
+        new ExtractTextPlugin('styles.css')
     ]
 };
