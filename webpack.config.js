@@ -80,7 +80,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'www'),
         filename: 'bundle.js',
-        publicPath: production ? '' :  "http://localhost:8080/"
+        publicPath: process.NODE_ENV === 'development' ? 'http://localhost:8080/' : ''
     },
     plugins: plugins
 };
