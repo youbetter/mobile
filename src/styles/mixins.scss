@@ -30,6 +30,14 @@
   }
 }
 
+// User Select
+@mixin user-select($user-select...) {
+    -webkit-user-select: $user-select;
+    -moz-user-select: $user-select;
+    -ms-user-select: $user-select;
+    user-select: $user-select;
+}
+
 // Box shadow
 @mixin box-shadow($shadow...) {
   -webkit-box-shadow: $shadow;
@@ -57,7 +65,6 @@
   background-image:         linear-gradient($deg, $color-from 0%, $color-to 100%);          // W3C
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color-from}', endColorstr='#{$color-to}', GradientType=1 ); // IE6-9
 }
-
 
 // Transforms
 // --------------------------------------------------

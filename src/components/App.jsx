@@ -36,7 +36,7 @@ export default React.createClass({
                     {
                         this.state.loggedIn ?
                         '' :
-                        <button className="btn pull-right" onClick={this.onLoginClick}>Continue with Facebook</button>
+                        <button className="btn btn-primary pull-right" onClick={this.onLoginClick}>Continue with Facebook</button>
                     }
                 </header>
                 <div className="content">
